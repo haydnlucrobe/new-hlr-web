@@ -54,11 +54,11 @@ gulp.task('sass', function () {
 /*
  * Jade Gulp thing
  */
- gulp.task('jade', function({
+ gulp.task('jade', function() {
     return gulp.src('_jadefiles/*.jade')
     .pipe(jade())
     .pipe(gulp.dest('_includes'));
- }));
+ });
 
 /**
  * Watch scss files for changes & recompile
