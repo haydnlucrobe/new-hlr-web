@@ -5,15 +5,10 @@ var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var jade        = require('gulp-jade');
 
-var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
-};
-
 /**
  * Build the Jekyll Site
  */
 gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
     return cp.spawn('jekyll.bat', ['build'], {stdio: 'inherit'}).on('close', done);
 });
 
@@ -54,11 +49,11 @@ gulp.task('sass', function () {
 /*
  * Jade Gulp thing
  */
- gulp.task('jade', function() {
+gulp.task('jade', function() {
     return gulp.src('_jadefiles/*.jade')
     .pipe(jade())
     .pipe(gulp.dest('_includes'));
- });
+});
 
 /**
  * Watch scss files for changes & recompile
@@ -66,7 +61,7 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
-    gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+    gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
 });
 
