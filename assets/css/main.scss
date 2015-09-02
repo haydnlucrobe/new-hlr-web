@@ -3,3 +3,13 @@
 
 @import "1-base/vars";
 @import "1-base/base";
+
+@import "2-pages/home";
+
+@import "3-sections/logo";
+@import "3-sections/web-dev";
+@import "3-sections/mag-design";
+@import "3-sections/blog";
+@import "3-sections/contact";
+
+@import "3-sections/home-responsive";

@@ -1,1 +1,19 @@
-h1 Hello World!
+mixin navContent()
+    ul
+        li.navitem: a(href="/webdev/") Web Development
+        li.navitem: a(href="/magdesign/") Magazine Design
+        li.navitem: a(href="/blog/") Blog
+        li.navitem: a(href="/contact/") Contact Me
+
+
+header
+    .headerBar
+        a(href="/").home back to <strong>haydnlucrobe.com</strong>
+        
+        .burger.icon-menu
+        
+        nav
+            +navContent()
+
+.mobileNav
+    +navContent()

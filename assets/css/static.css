@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -435,190 +436,250 @@ body {
   -webkit-tap-highlight-color: rgba(12, 186, 217, 0.4);
   font-family: "Titillium Web"; }
 
-body {
-  background: #F6F6F8;
-  font-size: 14px;
-  line-height: 1.6;
-  font-family: "Titillium Web";
-  color: #2E2D33;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  margin: 0; }
+@font-face {
+  font-family: 'fontello';
+  src: url("/assets/font/fontello.eot?76735988");
+  src: url("/assets/font/fontello.eot?76735988#iefix") format("embedded-opentype"), url("/assets/font/fontello.woff?76735988") format("woff"), url("/assets/font/fontello.ttf?76735988") format("truetype"), url("/assets/font/fontello.svg?76735988#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
-section {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  overflow: hidden; }
-
-.sectionWrap {
-  position: absolute;
-  height: 100%;
-  top: 33.3%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  -webkit-transition: 300ms ease-in-out;
-          transition: 300ms ease-in-out; }
-  .sectionWrap.textShowing {
-    top: 10%; }
-    .sectionWrap.textShowing .section-text {
-      opacity: 1;
-      -webkit-transition: 300ms ease-in-out;
-              transition: 300ms ease-in-out;
-      pointer-events: initial; }
-
-.buttonWrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
-.button {
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?76735988#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
   display: inline-block;
-  background-color: white;
-  padding: 5px 0px;
-  width: 20%;
-  border-radius: 10px;
-  box-shadow: none;
-  -webkit-transition: 250ms ease-in-out;
-          transition: 250ms ease-in-out;
-  font-family: "Titillium Web";
-  font-weight: 600;
-  text-transform: uppercase;
-  color: white;
-  cursor: pointer;
-  margin: 0 3px; }
-  .button:hover {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    color: white; }
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
 
-.section-text {
-  color: white;
-  width: 60%;
-  opacity: 0;
-  margin: 0 auto;
-  margin-top: 15px;
-  border-radius: 10px;
-  display: block;
-  pointer-events: none; }
-  .section-text p {
-    padding: 5px;
-    line-height: 1.3;
-    font-size: 14px; }
+.icon-menu:before {
+  content: '\e800'; }
+
+/* '' */
+.blogWrap {
+  max-width: 960px;
+  margin: 20px auto; }
+  .blogWrap .meetHaydn {
+    border-radius: 10px;
+    border: 2px solid rgba(10, 82, 190, 0.7);
+    padding: 10px;
+    margin: 0 50px;
+    width: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .blogWrap .meetHaydn .pic {
+      height: 200px;
+      min-width: 200px;
+      background-image: url("http://fillmurray.com/200/200"); }
+    .blogWrap .meetHaydn .text {
+      margin-left: 10px; }
+      .blogWrap .meetHaydn .text .head {
+        margin: 0;
+        color: black; }
+      .blogWrap .meetHaydn .text .blog-lead {
+        margin: 0;
+        padding: 0;
+        font-size: 12px; }
+  .blogWrap .latest {
+    width: auto;
+    margin: 40px 50px 20px; }
+    .blogWrap .latest h2 {
+      color: black;
+      margin: 0;
+      line-height: 1; }
+  .blogWrap .blogPost {
+    width: auto;
+    border-radius: 10px;
+    border: 2px solid grey;
+    padding: 10px;
+    margin: 0 50px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .blogWrap .blogPost .pic {
+      height: 150px;
+      min-width: 150px;
+      background-size: cover;
+      background-position: center; }
+    .blogWrap .blogPost .text {
+      margin-left: 10px; }
+      .blogWrap .blogPost .text .title {
+        color: #343434;
+        margin: 0; }
+        .blogWrap .blogPost .text .title:hover {
+          color: black; }
+      .blogWrap .blogPost .text .date {
+        margin: 0; }
+      .blogWrap .blogPost .text .description {
+        margin: 0;
+        line-height: 1.2; }
+
+.line {
+  height: 2px;
+  width: 50%;
+  background: lightgrey;
+  margin: 10px 0; }
+
+body {
+  min-height: 100vh; }
 
 header {
-  position: absolute;
-  height: 100vh;
+  background: white;
+  height: 60px;
+  box-shadow: 4px 4px 15px rgba(186, 186, 186, 0.5);
+  z-index: 2; }
+  header .headerBar {
+    height: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    header .headerBar a.home {
+      height: 100%;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 60px;
+      color: black;
+      margin-left: 40px;
+      padding: 0 10px;
+      background-color: white;
+      -webkit-transition: 200ms ease-in-out;
+              transition: 200ms ease-in-out; }
+      header .headerBar a.home.hover {
+        background-color: #ebebeb; }
+    header .headerBar nav {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%; }
+      header .headerBar nav ul {
+        padding: 0px;
+        margin: 0px;
+        display: inline-block;
+        height: 100%; }
+        header .headerBar nav ul li {
+          float: left;
+          list-style: none;
+          height: 100%;
+          background-color: white;
+          -webkit-transition: 200ms ease-in-out;
+                  transition: 200ms ease-in-out; }
+          header .headerBar nav ul li:last-child {
+            margin-right: 40px; }
+          header .headerBar nav ul li.hover {
+            background-color: #ebebeb; }
+          header .headerBar nav ul li a {
+            font-size: 16px;
+            font-weight: 600;
+            color: black;
+            padding: 0 10px;
+            height: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center; }
+            header .headerBar nav ul li a:hover {
+              color: black; }
+    header .headerBar .burger {
+      border-radius: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      padding: 10px;
+      margin-right: 40px; }
+
+.mobileNav {
+  display: none;
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
-.titleBox {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 5px 20px;
-  border-radius: 15px;
-  text-align: center;
-  z-index: 1;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
-  overflow: hidden; }
-  .titleBox a {
+  background: #ebebeb;
+  padding: 10px 0;
+  -webkit-transform: translateY(-150%);
+      -ms-transform: translateY(-150%);
+          transform: translateY(-150%);
+  opacity: 0;
+  -webkit-transition: 500ms ease-in-out;
+          transition: 500ms ease-in-out;
+  box-shadow: none;
+  z-index: 1; }
+  .mobileNav ul {
+    list-style: none;
     margin: 0;
-    color: black;
-    font-weight: 600; }
-  .titleBox p {
-    margin-bottom: 5px;
-    font-weight: 600; }
-
-section.webDev {
-  background-image: url("/assets/img/webdev-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; }
-  section.webDev .button {
-    background-color: rgba(10, 82, 190, 0.5); }
-    section.webDev .button:hover {
-      background-color: #0a52be; }
-  section.webDev .section-text {
-    background-color: rgba(10, 82, 190, 0.8); }
-
-section.magDesign {
-  background-image: url("/assets/img/magdesign-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  left: 50%; }
-  section.magDesign .button {
-    background-color: rgba(164, 20, 11, 0.5); }
-    section.magDesign .button:hover {
-      background-color: #a4140b; }
-  section.magDesign .section-text {
-    background-color: rgba(164, 20, 11, 0.8); }
-
-section.blog {
-  background-image: url("/assets/img/blog-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  top: 50%; }
-  section.blog .button {
-    background-color: rgba(15, 129, 9, 0.5); }
-    section.blog .button:hover {
-      background-color: #0f8109; }
-  section.blog .section-text {
-    background-color: rgba(15, 129, 9, 0.8); }
-
-section.contact {
-  background-image: url("/assets/img/contact-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  top: 50%;
-  left: 50%; }
-  section.contact .button {
-    background-color: rgba(115, 9, 199, 0.5); }
-    section.contact .button:hover {
-      background-color: #7309c7; }
-  section.contact .section-text {
-    background-color: rgba(115, 9, 199, 0.8); }
+    padding: 0; }
+    .mobileNav ul li {
+      text-align: center;
+      margin: 5px 0;
+      padding: 0;
+      line-height: 1.2; }
+      .mobileNav ul li a {
+        font-size: 16px;
+        font-weight: 600;
+        color: black; }
 
 @media (max-width: 720px) {
-  .sectionWrap {
-    top: 15%; }
-  .button {
-    width: 40%; }
-  .section-text {
-    width: 96%; } }
-
-@media (max-width: 500px) {
-  .info {
-    display: none; }
-  .sectionWrap {
-    top: 33.3%; } }
-
-@media (max-width: 360px) {
-  h3 {
-    font-size: 20px; } }
+  header .headerBar {
+    width: auto; }
+    header .headerBar nav {
+      display: none; }
+    header .headerBar .burger {
+      display: block; }
+  .mobileNav.isOpen {
+    display: block;
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+    box-shadow: 4px 4px 15px rgba(186, 186, 186, 0.5); } }

@@ -1,0 +1,21 @@
+.blogWrap
+    
+    .meetHaydn
+        .pic
+        .text
+             h2.head Meet Bill Murray!
+             .line
+             p.blog-lead Bacon ipsum dolor amet flank bresaola ex bacon pancetta andouille. Sunt ball tip ipsum, lorem nulla consequat t-bone do shoulder in commodo ea duis andouille aliqua. Meatball pork chop leberkas aute ex. 
+            
+    .latest
+        h2 Latest blogposts:
+    
+    {% for post in site.posts %}
+    .blogPost
+        .pic(style="background-image:url('/assets/img/blog/thumbnail/{{post.thumbnail}}.jpg');")
+        .text
+            a(href="{{post.url}}").title.bigger {{post.title}}
+            p.date {{post.date | date: "%a, %dnd %b, %Y"}}
+            .line
+            p.description {{post.description}}
+    {% endfor %}
